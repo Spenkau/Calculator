@@ -1,11 +1,127 @@
-body {
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+body  {
+  background-image: url('https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg');
+  background-size:cover;
+  -webkit-animation: slidein 100s;
+  animation: slidein 100s;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+.wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  .device {
+    margin: auto 0;
+    width: 375px;
+    height: 812px;
+    border-radius: 46px;
+    background: black;
+    border: 1px solid #000000;
+    padding: 4px;
+    z-index: 0;
+
+    .device-display {
+      width: 100%;
+      height: 100%;
+      border-radius: 46px;
+      background-image: url("../public/images/desktop-back.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      .visor {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin: 0 auto 40px auto;
+        background-color: #000000;
+        border-radius: 20px;
+        width: 35%;
+        height: 30px;
+
+        img {
+          position: absolute;
+          right: 0;
+          margin-right: 10px;
+          width: 21px;
+          height: 21px;
+          z-index: 200;
+          opacity: 0.8;
+          background-image: url("../public/images/lens.png");
+
+        }
+      }
+      .apps-list {
+        width: 100%;
+        height: 90%;
+        padding: 0 15px;
+        div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          width: 65px;
+          height: 70px;
+          cursor: pointer;
+
+          button {
+            width: 50px;
+            height: 45px;
+            border-radius: 5px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+          }
+          p {
+            color: white;
+          }
+        }
+        .calculator {
+          button {
+            background-image: url("../public/images/calculator.png");
+          }
+        }
+      }
+    }
+  }
 }
 
-.device {
-  width: 482px;
-  height: 972px;
-  background-color: black;
+@-webkit-keyframes slidein {
+  from {background-position: top; background-size:3000px; }
+  to {background-position: -100px 0px;background-size:2750px;}
+}
+
+@keyframes slidein {
+  from {background-position: top;background-size:3000px; }
+  to {background-position: -100px 0px;background-size:2750px;}
+
 }
